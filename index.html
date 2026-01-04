@@ -1,142 +1,237 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Permintaan maaf miru 💚🍀</title>
-    <style>
-        :root {
-            --primary: #2ecc71;
-            --primary-dark: #27ae60;
-            --bg: #eafaf1;
-        }
+<meta charset="UTF-8">
+<title>Permintaan maaf miru 💚</title>
 
-        * {
-            box-sizing: border-box;
-            font-family: "Segoe UI", sans-serif;
-        }
+<style>
+:root {
+    --primary: #2ecc71;
+    --primary-dark: #27ae60;
+    --bg: #eafaf1;
+}
 
-        body {
-            margin: 0;
-            min-height: 100vh;
-            background: linear-gradient(135deg, var(--bg), #d4f4e2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
 
-        .card {
-            background: #ffffff;
-            padding: 30px;
-            width: 90%;
-            max-width: 400px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            text-align: center;
-            animation: pop 0.6s ease;
-        }
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--bg), #d4f4e2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
 
-        @keyframes pop {
-            from {
-                transform: scale(0.8);
-                opacity: 0;
-            }
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
+/* ===== BACKGROUND LOVE ===== */
+.hearts {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+}
 
-        h1 {
-            color: var(--primary-dark);
-            margin-bottom: 10px;
-        }
+.heart {
+    position: absolute;
+    bottom: -20px;
+    color: rgba(46, 204, 113, 0.35);
+    font-size: 18px;
+    animation: floatUp linear infinite;
+}
 
-        p {
-            color: #444;
-            font-size: 15px;
-            line-height: 1.6;
-        }
+@keyframes floatUp {
+    from {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    to {
+        transform: translateY(-110vh) scale(1.4);
+        opacity: 0;
+    }
+}
 
-        .buttons {
-            margin-top: 25px;
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-        }
+/* ===== CARD ===== */
+.card {
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    padding: 30px;
+    width: 90%;
+    max-width: 420px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    animation: pop 0.6s ease;
+}
 
-        button {
-            padding: 10px 18px;
-            border-radius: 10px;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-            transition: 0.3s;
-        }
+@keyframes pop {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
 
-        .yes {
-            background: var(--primary);
-            color: white;
-        }
+h1 {
+    color: var(--primary-dark);
+}
 
-        .yes:hover {
-            background: var(--primary-dark);
-        }
+p {
+    color: #444;
+    font-size: 15px;
+    line-height: 1.6;
+}
 
-        .no {
-            background: #eeeeee;
-            color: #555;
-            position: relative;
-        }
+.buttons {
+    margin-top: 25px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
 
-        .message {
-            margin-top: 20px;
-            color: var(--primary-dark);
-            font-weight: 600;
-            display: none;
-        }
-    </style>
+button {
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: transform 0.4s ease, background 0.3s;
+}
+
+.yes {
+    background: var(--primary);
+    color: white;
+}
+
+.yes:hover {
+    background: var(--primary-dark);
+}
+
+.no {
+    background: #eee;
+    color: #555;
+}
+
+/* loncat */
+@keyframes jump {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-20px); }
+    60% { transform: translateY(5px); }
+    100% { transform: translateY(0); }
+}
+
+.jump {
+    animation: jump 0.4s ease;
+}
+
+.message {
+    margin-top: 20px;
+    color: var(--primary-dark);
+    font-weight: 600;
+    display: none;
+}
+</style>
 </head>
+
 <body>
 
+<!-- background -->
+<div class="hearts" id="hearts"></div>
+
 <div class="card">
-    <h1>Maaf Ya sayangkuuu 💚</h1>
-    <p>
+    <h1>Maaf Ya sayanggg🍀💚</h1>
+    <p id="text">
         Maaf buat hari ini tepatnya tanggal 4 bulan Januari 2026, baru awal tahun udah bikin kamu kecewa, marah, jengkel, bahkan sampai merasa jijik.
         Aku sungguh-sungguh minta maaf yang sedalam dalam nya dengan tulus, aku tau aku bodoh padahal banyak cara untuk mengabari kamu.
         Habis kuota bukanlah suatu alasan untuk tidak bisa berkabar, kamu off bukan juga suatu alasan untuk tidak bisa berkabar, tapi karna otak aku yang
         tidak bisa multitasking tadi pagi sampai melupakan adanya SMS di HP, sungguh benar-benar bodoh pacar mu ini.
-    </p>
-    <p>
         Tak apa aku dibandingkan dengan mantan mu, rasa sakit yang luar biasa ini aku terima.
-        Jadi dengan pernyataan ini aku harap akan dimaafkan sama kamu
-    </p>
-
-    <p>
-        Kamu mau maafin aku?
+        Jadi dengan pernyataan ini aku harap akan dimaafkan sama kamu.
     </p>
 
     <div class="buttons">
-        <button class="yes" onclick="terima()">Iya 💚</button>
-        <button class="no" onmouseover="kabur(this)">Enggak 😤</button>
+        <button class="yes" id="yesBtn" onclick="terima()">Iya 💚</button>
+        <button class="no" id="noBtn" onclick="enggak()">Enggak 😤</button>
     </div>
 
     <div class="message" id="msg">
-        Makasih yaa sayangku udah maafin 🍀💚
+        Terima kasih… kamu berarti banget buat aku 🌿💚
     </div>
 </div>
 
 <script>
-    function terima() {
-        document.getElementById("msg").style.display = "block";
-    }
+/* ===== AUDIO ===== */
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
-    function kabur(btn) {
-        const x = Math.random() * 200 - 100;
-        const y = Math.random() * 200 - 100;
-        btn.style.transform = `translate(${x}px, ${y}px)`;
-    }
+function playSound(freq, duration) {
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+
+    osc.frequency.value = freq;
+    osc.type = "sine";
+
+    gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+
+    osc.start();
+    osc.stop(audioCtx.currentTime + duration);
+}
+
+/* ===== BUTTON LOGIC ===== */
+let scaleNo = 1;
+let scaleYes = 1;
+
+function terima() {
+    playSound(800, 0.3);
+    document.getElementById("msg").style.display = "block";
+    document.getElementById("text").innerText =
+        "Makasih udah di maafin 🤍";
+    document.querySelector(".buttons").style.display = "none";
+}
+
+function enggak() {
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+
+    playSound(300, 0.25);
+
+    scaleNo -= 0.15;
+    if (scaleNo < 0.4) scaleNo = 0.4;
+    noBtn.style.transform = `scale(${scaleNo})`;
+
+    noBtn.classList.remove("jump");
+    void noBtn.offsetWidth;
+    noBtn.classList.add("jump");
+
+    scaleYes += 0.08;
+    yesBtn.style.transform = `scale(${scaleYes})`;
+}
+
+/* ===== LOVE PARTICLES ===== */
+const hearts = document.getElementById("hearts");
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = 14 + Math.random() * 18 + "px";
+    heart.style.animationDuration = 6 + Math.random() * 6 + "s";
+
+    hearts.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 12000);
+}
+
+setInterval(createHeart, 500);
 </script>
 
 </body>
 </html>
-
