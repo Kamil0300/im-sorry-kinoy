@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Permintaan maaf miru 💚</title>
+    <style>
+        :root {
+            --primary: #2ecc71;
+            --primary-dark: #27ae60;
+            --bg: #eafaf1;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--bg), #d4f4e2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 30px;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            animation: pop 0.6s ease;
+        }
+
+        @keyframes pop {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #444;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .buttons {
+            margin-top: 25px;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        button {
+            padding: 10px 18px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .yes {
+            background: var(--primary);
+            color: white;
+        }
+
+        .yes:hover {
+            background: var(--primary-dark);
+        }
+
+        .no {
+            background: #eeeeee;
+            color: #555;
+            position: relative;
+        }
+
+        .message {
+            margin-top: 20px;
+            color: var(--primary-dark);
+            font-weight: 600;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Maaf Ya sayangkuuu 💚</h1>
+    <p>
+        Maaf buat hari ini tepatnya tanggal 4 bulan Januari 2026, baru awal tahun udah bikin kamu kecewa, marah, jengkel, bahkan sampai merasa jijik.
+        Aku sungguh-sungguh minta maaf yang sedalam dalam nya dengan tulus, aku tau aku bodoh padahal banyak cara untuk mengabari kamu.
+        Habis kuota bukanlah suatu alasan untuk tidak bisa berkabar, kamu off bukan juga suatu alasan untuk tidak bisa berkabar, tapi karna otak aku yang
+        tidak bisa multitasking tadi pagi sampai melupakan adanya SMS di HP, sungguh benar-benar bodoh pacar mu ini.
+    </p>
+    <p>
+        Tak apa aku dibandingkan dengan mantan mu, rasa sakit yang luar biasa ini aku terima.
+        Jadi dengan pernyataan ini aku harap akan dimaafkan sama kamu
+    </p>
+
+    <p>
+        Kamu mau maafin aku?
+    </p>
+
+    <div class="buttons">
+        <button class="yes" onclick="terima()">Iya 💚</button>
+        <button class="no" onmouseover="kabur(this)">Enggak 😤</button>
+    </div>
+
+    <div class="message" id="msg">
+        Makasih yaa sayangku udah maafin 🍀💚
+    </div>
+</div>
+
+<script>
+    function terima() {
+        document.getElementById("msg").style.display = "block";
+    }
+
+    function kabur(btn) {
+        const x = Math.random() * 200 - 100;
+        const y = Math.random() * 200 - 100;
+        btn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+</script>
+
+</body>
+</html>
