@@ -2,145 +2,140 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Permintaan maaf miru 💚</title>
+<title>Permintaan Maaf Pacarmu Miru 💚</title>
 
 <style>
-:root {
-    --primary: #2ecc71;
-    --primary-dark: #27ae60;
-    --bg: #eafaf1;
+:root{
+    --primary:#2ecc71;
+    --dark:#27ae60;
+    --bg:#eafaf1;
 }
 
-* {
-    box-sizing: border-box;
-    font-family: "Segoe UI", sans-serif;
+*{
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
 }
 
-body {
-    margin: 0;
-    min-height: 100vh;
-    background: linear-gradient(135deg, var(--bg), #d4f4e2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+body{
+    margin:0;
+    min-height:100vh;
+    background:linear-gradient(135deg,var(--bg),#d4f4e2);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
 }
 
-/* ===== BACKGROUND LOVE ===== */
-.hearts {
-    position: fixed;
-    inset: 0;
-    overflow: hidden;
-    z-index: 0;
+/* ==== LOVE PARTICLES ==== */
+.hearts{
+    position:fixed;
+    inset:0;
+    z-index:0;
 }
 
-.heart {
-    position: absolute;
-    bottom: -20px;
-    color: rgba(46, 204, 113, 0.35);
-    font-size: 18px;
-    animation: floatUp linear infinite;
+.heart{
+    position:absolute;
+    bottom:-20px;
+    color:rgba(46,204,113,0.35);
+    animation:floatUp linear infinite;
 }
 
-@keyframes floatUp {
-    from {
-        transform: translateY(0) scale(1);
-        opacity: 0;
-    }
-    10% { opacity: 1; }
-    to {
-        transform: translateY(-110vh) scale(1.4);
-        opacity: 0;
-    }
+@keyframes floatUp{
+    from{transform:translateY(0);opacity:0}
+    10%{opacity:1}
+    to{transform:translateY(-110vh);opacity:0}
 }
 
-/* ===== CARD ===== */
-.card {
-    position: relative;
-    z-index: 2;
-    background: #fff;
-    padding: 30px;
-    width: 90%;
-    max-width: 420px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    text-align: center;
-    animation: pop 0.6s ease;
+/* ==== CARD ==== */
+.card{
+    position:relative;
+    z-index:2;
+    background:#fff;
+    padding:30px;
+    width:90%;
+    max-width:440px;
+    border-radius:16px;
+    box-shadow:0 12px 30px rgba(0,0,0,.1);
+    text-align:center;
+    animation:pop .6s ease;
 }
 
-@keyframes pop {
-    from { transform: scale(0.85); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+@keyframes pop{
+    from{transform:scale(.85);opacity:0}
+    to{transform:scale(1);opacity:1}
 }
 
-h1 {
-    color: var(--primary-dark);
+h1{color:var(--dark)}
+p{
+    color:#444;
+    font-size:15px;
+    line-height:1.6;
 }
 
-p {
-    color: #444;
-    font-size: 15px;
-    line-height: 1.6;
+.buttons{
+    margin-top:22px;
+    display:flex;
+    gap:12px;
+    justify-content:center;
+    flex-wrap:wrap;
 }
 
-.buttons {
-    margin-top: 25px;
-    display: flex;
-    gap: 12px;
-    justify-content: center;
+button{
+    padding:10px 18px;
+    border-radius:10px;
+    border:none;
+    cursor:pointer;
+    font-size:14px;
+    transition:.3s;
 }
 
-button {
-    padding: 10px 18px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    transition: transform 0.4s ease, background 0.3s;
+.yes{
+    background:var(--primary);
+    color:#fff;
 }
 
-.yes {
-    background: var(--primary);
-    color: white;
+.no{
+    background:#eee;
+    color:#555;
 }
 
-.yes:hover {
-    background: var(--primary-dark);
+/* ==== ANIMATIONS ==== */
+.shake{animation:shake .4s}
+@keyframes shake{
+    0%,100%{transform:translateX(0)}
+    25%{transform:translateX(-6px)}
+    75%{transform:translateX(6px)}
 }
 
-.no {
-    background: #eee;
-    color: #555;
+.fade{animation:fade .8s}
+@keyframes fade{
+    from{opacity:0}
+    to{opacity:1}
 }
 
-/* loncat */
-@keyframes jump {
-    0% { transform: translateY(0); }
-    30% { transform: translateY(-20px); }
-    60% { transform: translateY(5px); }
-    100% { transform: translateY(0); }
+.sad{animation:sad 1s}
+@keyframes sad{
+    0%{transform:scale(1)}
+    50%{transform:scale(.95)}
+    100%{transform:scale(1)}
 }
 
-.jump {
-    animation: jump 0.4s ease;
+.final{
+    color:#777;
+    font-style:italic;
+    margin-top:15px;
 }
 
-.message {
-    margin-top: 20px;
-    color: var(--primary-dark);
-    font-weight: 600;
-    display: none;
-}
+/* END */
 </style>
 </head>
 
 <body>
 
-<!-- background -->
 <div class="hearts" id="hearts"></div>
 
-<div class="card">
-    <h1>Maaf Ya sayanggg🍀💚</h1>
+<div class="card" id="card">
+    <h1>Maaf Ya Sayang💚</h1>
     <p id="text">
         Maaf buat hari ini tepatnya tanggal 4 bulan Januari 2026, baru awal tahun udah bikin kamu kecewa, marah, jengkel, bahkan sampai merasa jijik.
         Aku sungguh-sungguh minta maaf yang sedalam dalam nya dengan tulus, aku tau aku bodoh padahal banyak cara untuk mengabari kamu.
@@ -148,89 +143,101 @@ button {
         tidak bisa multitasking tadi pagi sampai melupakan adanya SMS di HP, sungguh benar-benar bodoh pacar mu ini.
         Tak apa aku dibandingkan dengan mantan mu, rasa sakit yang luar biasa ini aku terima.
         Jadi dengan pernyataan ini aku harap akan dimaafkan sama kamu.
+        Kamu mau maafin aku?
     </p>
 
-    <div class="buttons">
-        <button class="yes" id="yesBtn" onclick="terima()">Iya 💚</button>
-        <button class="no" id="noBtn" onclick="enggak()">Enggak 😤</button>
-    </div>
-
-    <div class="message" id="msg">
-        Terima kasih… kamu berarti banget buat aku 🌿💚
+    <div class="buttons" id="buttons">
+        <button class="yes" onclick="terima()">Iya 💚</button>
+        <button class="no" onclick="alasan()">Enggak 😤</button>
     </div>
 </div>
 
 <script>
-/* ===== AUDIO ===== */
-const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-
-function playSound(freq, duration) {
-    const osc = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
-
-    osc.frequency.value = freq;
-    osc.type = "sine";
-
-    gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
-
-    osc.connect(gain);
-    gain.connect(audioCtx.destination);
-
-    osc.start();
-    osc.stop(audioCtx.currentTime + duration);
+/* ==== AUDIO ==== */
+const ctx=new(window.AudioContext||window.webkitAudioContext)();
+function sound(f,d){
+    const o=ctx.createOscillator();
+    const g=ctx.createGain();
+    o.frequency.value=f;
+    g.gain.value=.15;
+    o.connect(g);g.connect(ctx.destination);
+    o.start();
+    g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+d);
+    o.stop(ctx.currentTime+d);
 }
 
-/* ===== BUTTON LOGIC ===== */
-let scaleNo = 1;
-let scaleYes = 1;
+const text=document.getElementById("text");
+const buttons=document.getElementById("buttons");
+const card=document.getElementById("card");
+let tahap=0;
 
-function terima() {
-    playSound(800, 0.3);
-    document.getElementById("msg").style.display = "block";
-    document.getElementById("text").innerText =
-        "Makasih udah di maafin 🤍";
-    document.querySelector(".buttons").style.display = "none";
+/* ==== FLOW ==== */
+function terima(){
+    sound(800,.3);
+    text.innerText="Makasih sayang… aku bakal jaga kepercayaan ini 🍀💚";
+    buttons.style.display="none";
 }
 
-function enggak() {
-    const noBtn = document.getElementById("noBtn");
-    const yesBtn = document.getElementById("yesBtn");
-
-    playSound(300, 0.25);
-
-    scaleNo -= 0.15;
-    if (scaleNo < 0.4) scaleNo = 0.4;
-    noBtn.style.transform = `scale(${scaleNo})`;
-
-    noBtn.classList.remove("jump");
-    void noBtn.offsetWidth;
-    noBtn.classList.add("jump");
-
-    scaleYes += 0.08;
-    yesBtn.style.transform = `scale(${scaleYes})`;
+function alasan(){
+    sound(300,.25);
+    tahap=1;
+    text.innerText="Boleh jujur, apa yang bikin kamu belum bisa maafin aku?";
+    buttons.innerHTML=`
+        <button class="no" onclick="respon('kecewa')">Aku kecewa 😞</button>
+        <button class="no" onclick="respon('capek')">Aku capek 😮‍💨</button>
+        <button class="no" onclick="respon('sakit')">Aku sakit hati 💔</button>
+    `;
 }
 
-/* ===== LOVE PARTICLES ===== */
-const hearts = document.getElementById("hearts");
+function respon(type){
+    sound(350,.25);
+    card.className="card";
 
-function createHeart() {
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerHTML = "❤";
+    if(type==="kecewa"){
+        card.classList.add("shake");
+        text.innerText="Aku paham rasa kecewa itu. Aku dungu, dan aku nyesel banget.";
+    }
+    if(type==="capek"){
+        card.classList.add("fade");
+        text.innerText="Kalau kamu capek, harusnya aku jadi tempat pulang, bukan beban.";
+    }
+    if(type==="sakit"){
+        card.classList.add("sad");
+        text.innerText="Aku sadar kata, sikap, dan tingkahku nyakitin kamu. Itu salahku sepenuhnya.";
+    }
 
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = 14 + Math.random() * 18 + "px";
-    heart.style.animationDuration = 6 + Math.random() * 6 + "s";
-
-    hearts.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 12000);
+    buttons.innerHTML=`
+        <button class="yes" onclick="terima()">Iya, aku maafin 💚</button>
+        <button class="no" onclick="akhir()">Tetap enggak 😔</button>
+    `;
 }
 
-setInterval(createHeart, 500);
+function akhir(){
+    sound(200,.4);
+    buttons.style.display="none";
+    text.innerHTML=`
+        Aku menghargai keputusan kamu.  
+        <div class="final">
+            Kalau suatu hari kamu ingat aku,  
+            ingatlah bahwa aku pernah ingin memperbaiki semuanya…  
+            dan menyesal karena terlambat 🌱🍀
+        </div>
+    `;
+}
+
+/* ==== LOVE PARTICLES ==== */
+const hearts=document.getElementById("hearts");
+function love(){
+    const h=document.createElement("div");
+    h.className="heart";
+    h.innerText="❤";
+    h.style.left=Math.random()*100+"vw";
+    h.style.fontSize=12+Math.random()*18+"px";
+    h.style.animationDuration=6+Math.random()*6+"s";
+    hearts.appendChild(h);
+    setTimeout(()=>h.remove(),12000);
+}
+setInterval(love,500);
 </script>
 
 </body>
